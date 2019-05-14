@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {fetchShows} from "../../actions/shows";
+import TvShow from './TvShow.js';
 
 const shows = ({shows}) => ({shows});
-
 
 @connect(shows, {fetchShows})
 export default class TvShows extends Component {
@@ -13,11 +13,21 @@ export default class TvShows extends Component {
   }
 
   render() {
-    const { shows: { data } } = this.props;
+    const {shows: {data}} = this.props;
     console.log(data);
     return (
-        <div>
-          {data.map((item, i) => <div key={i} >{JSON.stringify(item.show)} </div>)}
+        <div className="container">
+          <div className="shows">
+            <div className="shows__title">
+              Batman TV Shows
+            </div>
+            <div className="shows__items">
+              {data.map((show, i) =>
+                  <TvShow key={i} {...show}/>
+              )}
+            </div>
+
+          </div>
         </div>
     );
   }
