@@ -12,8 +12,8 @@ export default class TvShow extends Component {
   }
 
   render() {
-    const {show: {show}} = this.props;
-    console.log(show)
+    const {show: {data}} = this.props;
+    console.log(data)
     return (
         <div className="container">
 

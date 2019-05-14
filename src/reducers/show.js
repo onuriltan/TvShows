@@ -4,7 +4,7 @@ import {
 } from "../actions/types";
 
 const INITIAL_STATE = {
-  show: {}
+  data: {}
 };
 
 export default(state = INITIAL_STATE, action) => {
@@ -13,7 +13,7 @@ export default(state = INITIAL_STATE, action) => {
       return { ...state };
     }
     case RECEIVE_SHOW: {
-      return { ...state, show: action.payload };
+      return { ...state, data: action.payload };
     }
     default: return state;
   }
