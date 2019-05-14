@@ -8,12 +8,12 @@
   &__title {
     font-size: 2rem;
     padding: 1rem;
+    font-weight: bold;
   }
 
   &__items {
-    width: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: center;
   }
 }

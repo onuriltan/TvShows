@@ -4,17 +4,16 @@ import {
 } from "../actions/types";
 
 const INITIAL_STATE = {
-  data: [],
-  isFetching: false
+  data: []
 };
 
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case REQUEST_SHOWS: {
-      return { ...state, isFetching: true };
+      return { ...state };
     }
     case RECEIVE_SHOWS: {
-      return { ...state, isFetching: false, data: action.payload };
+      return { ...state, data: action.payload };
     }
     default:
       return state;
