@@ -19,7 +19,6 @@ export default class TvShowPage extends Component {
 
   render() {
     const {name, image, summary, network, rating, premiered, genres, language} = this.props.show.data;
-    console.log(this.props.show.data)
     if (this.props.show.data.name === undefined) {
       return null
     }
