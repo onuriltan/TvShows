@@ -1,11 +1,52 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans');
+
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Nunito Sans', sans-serif;
 }
 
 .container {
-  width: 100%;
+  width: 95%;
   max-width: 1200px;
   margin: 0 auto;
 }
+
+@media (min-width: 320px) {
+  body {
+    font-size: 8px !important;
+  }
+}
+
+@media (min-width: 480px) {
+  body {
+    font-size: 8px !important;
+  }
+}
+
+@media (min-width: 600px) {
+  body {
+    font-size: 12px !important;
+  }
+}
+
+@media (min-width: 801px) {
+  body {
+    font-size: 14px !important;
+  }
+}
+
+@media (min-width: 1025px) {
+  body {
+    font-size: 16px !important;
+  }
+}
+
+@media (min-width: 1281px) {
+  body {
+    font-size: 18px !important;
+  }
+}
+
+
