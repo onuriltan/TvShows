@@ -4,10 +4,11 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "npm install && node server.js",
+    "start": "node server.js",
     "dev": "webpack-dev-server",
     "build": "webpack --config webpack.build.config.js",
-    "server-build": "webpack --config webpack.server.config.js"
+    "server-build": "webpack --config webpack.server.config.js",
+    "heroku-prebuild": "npm install && npm install --only=dev"
   },
   "dependencies": {
     "axios": "^0.18.0",
