@@ -1,18 +1,18 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {fetchShow} from "../../actions/shows";
+import {fetchShow, removeShow} from "../../actions/shows";
 import TvShow from "./TvShow";
 
 const show = ({show}) => ({show});
 
-@connect(show, {fetchShow})
+@connect(show, {fetchShow, removeShow})
 export default class TvShowPage extends Component {
 
   componentDidMount() {
     this.props.fetchShow(this.props.match.params.name);
   }
-
   goBack = () => {
+    this.props.removeShow();
     this.props.history.goBack();
   };
 
@@ -20,13 +20,7 @@ export default class TvShowPage extends Component {
     const {show: {data}} = this.props;
     return (
         <div className="container">
-          <div className="show">
-            <div className="show__back-button" onClick={this.goBack}>
-              <div className="show__back-button__icon">⬅</div>
-              <div className="show__back-button__text">Go Back</div>
-            </div>
-          </div>
-          <TvShow {...data}/>
+          <TvShow data={data} goBack={this.goBack} />
         </div>
     );
   }

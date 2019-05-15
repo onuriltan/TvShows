@@ -12,6 +12,7 @@ export default class TvShowsPage extends Component {
     this.props.fetchShows();
   }
 
+
   render() {
     const {shows: {data}} = this.props;
     return (
@@ -25,7 +26,6 @@ export default class TvShowsPage extends Component {
                   <TvShow key={i} {...show}/>
               )}
             </div>
-
           </div>
         </div>
     );

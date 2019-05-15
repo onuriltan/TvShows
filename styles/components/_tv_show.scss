@@ -1,26 +1,23 @@
-.show_details {
+.show_container {
   padding-top: 50px;
-  display: flex;
-  flex-direction: row;
 
-  &__img-container {
-    width: 40%;
+  &__main {
+    display: flex;
+    flex-direction: row;
 
-    &__img {
-      width: 100%;
-      border-radius: 5px;
+    &__img-container {
+      width: 30%;
+
+      &__img {
+        width: 100%;
+        border-radius: 5px;
+      }
     }
   }
 
-  &__container {
-    width: 40%;
-    padding: 0 20px;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-
-    &__name {
-      font-size: 3em;
+  &__summary {
+    p {
+      font-size: 1.2em !important;
     }
   }
 }

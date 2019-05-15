@@ -1,0 +1,12 @@
+.show_details {
+  width: 70%;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  &__detail {
+    width: 100%;
+    font-size: 1.8em;
+  }
+}

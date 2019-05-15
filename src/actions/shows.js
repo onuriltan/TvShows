@@ -6,7 +6,8 @@ import {
   REQUEST_SHOWS,
   RECEIVE_SHOWS,
   REQUEST_SHOW,
-  RECEIVE_SHOW
+  RECEIVE_SHOW,
+  REMOVE_SHOW
 } from "./types";
 
 
@@ -30,5 +31,9 @@ export const fetchShow = name => async dispatch => {
     console.log(e);
     dispatch({ type: RECEIVE_SHOW, payload: {} });
   }
+};
+
+export const removeShow = () => async dispatch => {
+    dispatch({ type: REMOVE_SHOW, payload: {} });
 };
 

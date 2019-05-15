@@ -1,0 +1,36 @@
+.show_header {
+  display: flex;
+  align-items: center;
+  padding-bottom: 30px;
+
+  &__back-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    width: 130px;
+    height: 25px;
+    transition: 0.3s;
+
+    &:hover {
+      cursor: pointer;
+      color: white;
+      background-color: black;
+    }
+
+    &__text {
+      margin-left: 5px;
+      font-size: 20px;
+    }
+  }
+
+  &__name {
+    width: 100%;
+    text-align: center;
+    font-size: 3em;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+}

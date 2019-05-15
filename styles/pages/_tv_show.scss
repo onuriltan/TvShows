@@ -2,27 +2,4 @@
   padding-top: 50px;
   display: flex;
   flex-direction: row;
-
-  &__back-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid black;
-    border-radius: 5px;
-    padding: 3px;
-    width: 100px;
-    transition: 0.3s;
-
-    &:hover {
-      cursor: pointer;
-      color: white;
-      background-color: black;
-    }
-    &__text {
-      margin-left: 5px;
-      font-size: 1em;
-    }
-
-  }
-
 }
