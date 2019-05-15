@@ -1,5 +1,4 @@
 import express from 'express';
-import { renderToString } from 'react-dom/server';
 import { matchRoutes } from 'react-router-config';
 import render from './render';
 import store from '../src/store';

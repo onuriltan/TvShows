@@ -1,5 +1,23 @@
-.show {
+.show_container {
   padding-top: 50px;
-  display: flex;
-  flex-direction: row;
+
+  &__main {
+    display: flex;
+    flex-direction: row;
+
+    &__img-container {
+      width: 30%;
+
+      &__img {
+        width: 100%;
+        border-radius: 5px;
+      }
+    }
+  }
+
+  &__summary {
+    p {
+      font-size: 1.5em !important;
+    }
+  }
 }

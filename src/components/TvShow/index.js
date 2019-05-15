@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {fetchShow, removeShow} from "../../actions/shows";
-import TvShow from "./TvShow";
+import TvShowHeader from "./TvShowHeader";
+import TvShowDetails from "./TvShowDetails";
 
 const show = ({show}) => ({show});
 
@@ -17,10 +18,24 @@ export default class TvShowPage extends Component {
   };
 
   render() {
-    const {show: {data}} = this.props;
+    const {name, image, summary, network, rating, premiered, genres, language} = this.props.show.data;
+    console.log(this.props.show.data)
+    if (this.props.show.data.name === undefined) {
+      return null
+    }
     return (
         <div className="container">
-          <TvShow data={data} goBack={this.goBack} />
+          <div className="show_container">
+            <TvShowHeader name={name} goBack={this.goBack} />
+            <div className="show_container__main">
+              <div className="show_container__main__img-container">
+                <img className="show_container__main__img-container__img" src={image.original} alt={name}/>
+              </div>
+              <TvShowDetails network={network} rating={rating} premiered={premiered}
+                             genres={genres} language={language} />
+            </div>
+            <div className="show_container__summary" dangerouslySetInnerHTML={{__html: summary}}/>
+          </div>
         </div>
     );
   }
