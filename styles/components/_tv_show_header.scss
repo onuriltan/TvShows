@@ -10,8 +10,8 @@
     border: 1px solid black;
     border-radius: 5px;
     padding: 5px;
-    width: 130px;
-    height: 25px;
+    width: 8em;
+    height: 1.3em;
     transition: 0.3s;
 
     &:hover {
@@ -22,7 +22,7 @@
 
     &__text {
       margin-left: 5px;
-      font-size: 20px;
+      font-size: 1.1em;
     }
   }
 
