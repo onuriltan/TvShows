@@ -20,7 +20,7 @@ export default (pathname, store, context) => {
       <html lang="en">
       <head>
         <meta charset="UTF-8">
-        <title>Title</title>
+        <title>Batman TV Shows</title>
       </head>
       <body>
       
