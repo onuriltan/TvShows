@@ -6,7 +6,7 @@ import TvShow from './TvShowsItem.js';
 const shows = ({shows}) => ({shows});
 
 @connect(shows, {fetchShows})
-export default class TvShows extends Component {
+export default class TvShowsPage extends Component {
 
   componentDidMount() {
     this.props.fetchShows();
