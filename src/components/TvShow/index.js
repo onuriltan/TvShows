@@ -2,9 +2,12 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import TvShowHeader from "./TvShowHeader";
 import TvShowDetails from "./TvShowDetails";
+import {fetchShows} from "../../actions/shows";
 
+const shows = ({shows}) => ({shows});
 
 @connect(store => ({shows: store.shows }))
+@connect(shows, {fetchShows})
 export default class TvShowPage extends Component {
 
   constructor(props) {
@@ -14,10 +17,25 @@ export default class TvShowPage extends Component {
     }
   }
 
-  componentDidMount() {
+  findShow = () => {
     let theShow = this.props.shows.data.filter(show =>  show.show.name === this.props.match.params.name ? show : null )[0];
     this.setState({ currentShow : theShow});
+  };
+
+  componentDidMount() {
+    if(this.props.shows.data.length === 0) {
+      this.props.fetchShows();
+    }else {
+      this.findShow()
+    }
   }
+  componentDidUpdate(oldProps) {
+    const newProps = this.props;
+    if(oldProps.shows.data !== newProps.shows.data) {
+      this.findShow()
+    }
+  }
+
   goBack = () => {
     this.props.history.goBack();
   };
