@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {fetchShows} from "../../actions/shows";
 import TvShow from './TvShowsItem.js';
 
+
 const shows = ({shows}) => ({shows});
 
 @connect(shows, {fetchShows})

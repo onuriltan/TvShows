@@ -6,14 +6,14 @@ export default ({network, rating, premiered, genres, language}) => {
         { premiered
             ?
             <div className="show_details__detail">
-              Premiered : {premiered}
+              <b style={{'textTransform': 'uppercase'}}>Premiered: </b> {premiered}
             </div>
             : null
         }
         { genres
             ?
             <div className="show_details__detail">
-              Genres : {genres.map((genre, i) =>
+              <b style={{'textTransform': 'uppercase'}}>Genres : </b>{genres.map((genre, i) =>
                 i + 1 === genres.length ? genre : genre + ", "
             )}
             </div>
@@ -21,17 +21,17 @@ export default ({network, rating, premiered, genres, language}) => {
         }
         { language
             ?
-            <div className="show_details__detail">Language : {language}</div>
+            <div className="show_details__detail"><b style={{'textTransform': 'uppercase'}}>Language :</b> {language}</div>
             : null
         }
         { rating.average !== undefined && rating.average !== null
             ?
-            <div className="show_details__detail">Rating : {rating.average}</div>
+            <div className="show_details__detail"><b style={{'textTransform': 'uppercase'}}>Rating : </b>{rating.average}</div>
             : null
         }
         { network !== undefined && network !== null
             ?
-            <div className="show_details__detail">Country : {network.country.name}</div>
+            <div className="show_details__detail"><b style={{'textTransform': 'uppercase'}}>Country : </b>{network.country.name}</div>
             : null
         }
       </div>
