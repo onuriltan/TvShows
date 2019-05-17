@@ -17,10 +17,16 @@ export default class TvShowPage extends Component {
       currentShow: null
     }
   }
+  componentDidMount() {
+    if(this.props.show === undefined) {
+      this.props.fetchShows();
+    }
+  }
 
   goBack = () => {
     this.props.history.goBack();
   };
+
 
   render() {
     if(this.props.show === undefined) return null;
