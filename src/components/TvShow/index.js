@@ -4,10 +4,11 @@ import TvShowHeader from "./TvShowHeader";
 import TvShowDetails from "./TvShowDetails";
 import {fetchShows} from "../../actions/shows";
 
-const shows = ({shows}) => ({shows});
+function mapStateToProps(state, ownProps) {
+  return { show: state.shows.data.filter(show =>  show.show.name === ownProps.match.params.name ? show : null )[0] };
+}
 
-@connect(store => ({shows: store.shows }))
-@connect(shows, {fetchShows})
+@connect(mapStateToProps, {fetchShows})
 export default class TvShowPage extends Component {
 
   constructor(props) {
@@ -16,34 +17,22 @@ export default class TvShowPage extends Component {
       currentShow: null
     }
   }
-
-  findShow = () => {
-    let theShow = this.props.shows.data.filter(show =>  show.show.name === this.props.match.params.name ? show : null )[0];
-    this.setState({ currentShow : theShow});
-  };
-
   componentDidMount() {
-    if(this.props.shows.data.length === 0) {
+    if(this.props.shows === undefined) {
       this.props.fetchShows();
-    }else {
-      this.findShow()
     }
   }
-  componentDidUpdate(oldProps) {
-    const newProps = this.props;
-    if(oldProps.shows.data !== newProps.shows.data) {
-      this.findShow()
-    }
-  }
+
 
   goBack = () => {
     this.props.history.goBack();
+    this.props.fetchShows();
   };
 
   render() {
-    if(this.state.currentShow === null) return null;
+    if(this.props.show === undefined) return null;
 
-    const {name, image, summary, network, rating, premiered, genres, language} = this.state.currentShow.show;
+    const {name, image, summary, network, rating, premiered, genres, language} = this.props.show.show;
 
     return (
         <div className="container">
